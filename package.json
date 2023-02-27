@@ -19,6 +19,7 @@
   "homepage": "https://github.com/DavidKniotek/REST-project-CRM#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^6.0.7"
+    "express-handlebars": "^6.0.7",
+    "uuid": "^9.0.0"
   }
 }

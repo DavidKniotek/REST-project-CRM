@@ -1,8 +1,10 @@
 const express = require('express');
 const hbs = require('express-handlebars');
 const {clientRouter} = require("./routers/client");
+const {homeRouter} = require("./routers/home");
+const {dataBase} = require('./utils/data-base');
 
-const app = express();
+const app = express(); // instance of our app
 
 // ---- CONFIG ----
 
@@ -21,7 +23,14 @@ app.engine('.hbs', hbs.engine({ // info that we'll be using an engine for hbs fi
 
 app.set('view engine', '.hbs'); // we inform express that if we'll be using a 'render' method, we'll be using the hbs engine to generate views
 
+app.use('/', homeRouter);
 app.use('/client', clientRouter);
+app.get('/test', (req, res) => {
+    dataBase.update('49e9995a-6c75-475b-b307-d7500bd6315e', {
+        name: 'Test 2',
+    });
+    res.send('ok');
+});
 
 // ---- APP RUNNING ----
 
