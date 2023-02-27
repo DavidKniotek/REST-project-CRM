@@ -61,7 +61,7 @@ class DataBase { // Object DataBase won't be in usage, until we don't add it to 
 
 }
 
-const dataBase = new DataBase('client-data.json'); // instance of the data base, in this app will be just one (only client-data.json).
+const dataBase = new DataBase('client-data.json'); // instance of the data-base, in this app will be just one (only client-data.json). In case of more instances, its name should be more precise, e.g. clientDataBase.
 
 module.exports = {
     dataBase,

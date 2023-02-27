@@ -26,10 +26,7 @@ app.set('view engine', '.hbs'); // we inform express that if we'll be using a 'r
 app.use('/', homeRouter);
 app.use('/client', clientRouter);
 app.get('/test', (req, res) => {
-    dataBase.update('49e9995a-6c75-475b-b307-d7500bd6315e', {
-        name: 'Test 2',
-    });
-    res.send('ok');
+    res.send(dataBase.getOne('44069bab-a33f-41ea-a872-01fee69d2e31').name);
 });
 
 // ---- APP RUNNING ----
