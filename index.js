@@ -25,9 +25,6 @@ app.set('view engine', '.hbs'); // we inform express that if we'll be using a 'r
 
 app.use('/', homeRouter);
 app.use('/client', clientRouter);
-app.get('/test', (req, res) => {
-    res.send(dataBase.getOne('44069bab-a33f-41ea-a872-01fee69d2e31').name);
-});
 
 // ---- APP RUNNING ----
 
